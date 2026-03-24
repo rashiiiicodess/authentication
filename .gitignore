@@ -1,0 +1,21 @@
+# 1. Security: Ignore environment variables (MUST HAVE)
+.env
+.env.local
+.env.sample
+
+# 2. Dependencies: Ignore the massive node_modules folder
+# (Everyone runs 'npm install' to get their own copy)
+node_modules/
+
+# 3. Debugging: Ignore log files created by npm or yarn
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 4. OS Specific files: Ignore system junk
+.DS_Store
+Thumbs.db
+
+# 5. Build/Dist folders (if you use them later for React)
+dist/
+build/
