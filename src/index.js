@@ -3,8 +3,12 @@ import session from "express-session";
 import passport from "passport";
 import dotenv from "dotenv";
 import cors from "cors";
+import { dbConnect } from "./Config/dbConnect.js";
+import dns from "node:dns";
+dns.setServers(["1.1.1.1", "8.8.8.8"]);
 
 dotenv.config();
+dbConnect();
 const app=express();
 //middlewears
 const corsOptions={
