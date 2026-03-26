@@ -15,7 +15,7 @@ router.get("/status",authStatus);
 
 //Logout Route
 
-router.get("/logout",logout);
+router.post("/logout",logout);
 
 //2FA SETUP
 router.post("/2fa/setup",(req,res,next)=>{

@@ -31,9 +31,11 @@ export const setup2FA=async(token)=>{
     withCredentials:true,
 })
 }
-export const verify2FA=async()=>{
+export const verify2FA=async(otp)=>{
     return await api.post("/auth/2fa/verify",
-        {},
-    {withCredentials:true,})
+        { token: otp },
+    {withCredentials:true})
 }
-
+export const reset2FA = async () => {
+    return await api.post("/auth/2fa/reset", {}, { withCredentials: true });
+};

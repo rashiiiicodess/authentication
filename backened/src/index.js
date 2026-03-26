@@ -16,6 +16,7 @@ const app=express();
 const corsOptions={
     origin:["http://localhost:3001"],
     credentials:true,
+    methods: ["GET", "POST", "PUT", "DELETE"]
 };
 
 app.use(cors(corsOptions))
@@ -26,6 +27,8 @@ app.use(session({
     resave:false,
     saveUninitialized:false,
     cookie:{
+        secure: false,
+        sameSite: 'lax',
         maxAge:60000*60,
     }
 }))

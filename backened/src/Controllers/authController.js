@@ -86,6 +86,7 @@ export const setup2FA=async(req,res)=>{
             label:`${req.user.username}`,
             issuer:"www.rashiagarwal.com",
             encoding:"base32",
+            
         });
         const qrImageUrl=await qrcode.toDataURL(url);
         res.status(200).json({
@@ -116,7 +117,8 @@ export const verify2FA=async(req,res)=>{
         const jwtToken=jwt.sign({username:user.username},process.env.JWT_SECRET,
             {expiresIn:"1hr"}
         );
-        res.status(200).json({message:"2FA successful",token:jwtToken})
+        res.status(200).json({message:"2FA successful",token:jwtToken,username: user.username, 
+            isMfaActive: user.isMfaActive})
     }
     else{
         res.status(400).json({message:"Invalid 2fa code"});

@@ -1,14 +1,14 @@
+import Setup2FA from "../components/TwoFASetup";
 
-const Setup2FA = () => {
+const Setup2FAPage = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-900 text-white">
-      <h1 className="text-2xl font-bold">Setup Two-Factor Authentication</h1>
-      <div className="mt-6 p-4 bg-white rounded">
-        {/* QR Code will render here */}
-        <div className="w-48 h-48 bg-gray-300 flex items-center justify-center text-black">QR Code Placeholder</div>
-      </div>
-    </div>
+    <main className="bg-gray-950">
+      {/* We wrap the component in a page-level container 
+          in case you want to add a Sidebar or Navbar later 
+      */}
+      <Setup2FA/>
+    </main>
   );
 };
 
-export default Setup2FA;
+export default Setup2FAPage;
