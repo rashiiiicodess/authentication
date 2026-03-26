@@ -1,4 +1,4 @@
-import {createBrowserRouter} from "react-router-dom";
+import {createBrowserRouter,Outlet} from "react-router-dom";
 import LoginPage from "./pages/loginPage.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import  Verify2FA from "./pages/verify2FA.jsx";

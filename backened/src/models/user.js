@@ -1,6 +1,11 @@
 import mongoose from "mongoose";
 const userSchema=new mongoose.Schema({
     username:{
+        type: String,
+        required: true,
+        unique: true,  // This is the most important line
+        trim: true,    // Removes whitespace from ends
+        lowercase: true
         
     },
     password:{
