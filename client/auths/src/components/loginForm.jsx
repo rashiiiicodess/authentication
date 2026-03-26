@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { register, login } from "../services/authApi";
 
-const LoginForm = () => {
+const LoginForm = ({onLoginSuccess}) => {
     const [isRegister, setIsRegister] = useState(false);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -20,12 +20,15 @@ const LoginForm = () => {
             setMessage(data.message);
             setUsername("");
             setPassword("");
+            setError("");
+            onLoginSuccess(data);
 
         }
         catch (error) {
             console.log("The err is:", error.message);
             setUsername("");
             setPassword("");
+            setMessage("");
 
             setError("Invalid credentials");
         }
@@ -49,11 +52,13 @@ const LoginForm = () => {
             setUsername("");
             setPassword("");
             setConfirmPassword("");
+            setError("");
         }
         catch (error) {
             console.log("The err is:", error.message);
             setUsername("");
             setPassword("");
+            setMessage("");
             setConfirmPassword("");
             setError("Something went wrong during user registration");
         }

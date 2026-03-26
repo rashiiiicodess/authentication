@@ -1,12 +1,16 @@
 import {RouterProvider} from "react-router-dom"
 import {router} from "./routes"
+import { SessionProvider } from "./context/SessionContext"
 function App() {
   return (
     <div >
      <div>
-      <RouterProvider router={router}>
+      <SessionProvider>
+        <RouterProvider router={router} />
+        </SessionProvider>
+      
 
-      </RouterProvider>
+     
      </div>
     </div>
   )
